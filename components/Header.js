@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
     lineHeight: '20px',
     letterSpacing: '0.5px',
     color: '#fff',
-    margin: '10px'
+    margin: '10px',
+    fontFamily: 'Roboto_700Bold'
   },
   description: {
     fontSize: '14px',
@@ -34,7 +35,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: '15px',
     paddingVertical: '3px',
-    paddingHorizontal: '10px'
+    paddingHorizontal: '10px',
+    fontFamily: 'Roboto_400Regular'
   }
 });
 
