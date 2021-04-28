@@ -114,24 +114,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     backgroundColor: '#fff',
-    height: '117px'
+    height: 117
   },
   tab: {
-    width: '56px',
-    height: '56px',
+    width: 56,
+    height: 56,
     alignItems: 'center'
   },
   tabText: {
     fontFamily: 'Roboto_400Regular',
-    fontSize: '12px',
-    lineHeight: '20px',
-    marginTop: '5px'
+    fontSize: 12,
+    lineHeight: 20,
+    marginTop: 5
   },
   tabTextInactive: {
     fontFamily: 'Roboto_400Regular',
-    fontSize: '12px',
-    lineHeight: '20px',
-    marginTop: '5px',
+    fontSize: 12,
+    lineHeight: 20,
+    marginTop: 5,
     color: '#A0A9B8'
   }
 });

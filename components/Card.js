@@ -20,48 +20,48 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     backgroundColor: '#fff',
-    borderRadius: '20px',
-    width: '248px'
+    borderRadius: 20,
+    width: 248
   },
   profile: {
-    width: '56px',
-    height: '56px',
+    width: 56,
+    height: 56,
     marginTop: '-10%',
-    marginBottom: '10px'
+    marginBottom: 10
   },
   title: {
-    fontSize: '25px',
-    lineHeight: '30px',
-    letterSpacing: '0.69px',
+    fontSize: 25,
+    lineHeight: 30,
+    letterSpacing: 0.69,
     color: '#4E5B76',
-    margin: '10px',
+    margin: 10,
     fontFamily: 'Roboto_700Bold',
-    paddingHorizontal: '25px',
+    paddingHorizontal: 25,
     textAlign: 'center'
   },
   description: {
-    fontSize: '14px',
-    lineHeight: '20px',
-    letterSpacing: '0.39px',
+    fontSize: 14,
+    lineHeight: 20,
+    letterSpacing: 0.39,
     color: '#A0A9B8',
-    marginBottom: '20px',
-    paddingHorizontal: '35px',
+    marginBottom: 20,
+    paddingHorizontal: 35,
     fontFamily: 'Roboto_400Regular',
     textAlign: 'center'
   },
   buttonWrapper: {
-    borderRadius: '19px',
+    borderRadius: 19,
     backgroundColor: '#303371',
-    paddingVertical: '8px',
-    paddingHorizontal: '40px',
-    marginVertical: '43px'
+    paddingVertical: 8,
+    paddingHorizontal: 40,
+    marginVertical: 43
   },
   buttonText: {
     color: '#fff',
     fontFamily: 'Roboto_700Bold',
-    fontSize: '14px',
-    lineHeight: '20px',
-    letterSpacing: '0.39px'
+    fontSize: 14,
+    lineHeight: 20,
+    letterSpacing: 0.39
   }
 });
 

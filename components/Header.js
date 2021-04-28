@@ -6,7 +6,9 @@ const Header = () => {
     <View style={styles.container}>
       <Image style={styles.profile} source={require('../assets/profile.png')} />
       <Text style={styles.name}>Lottie Curtis</Text>
-      <Text style={styles.description}>You have 3 Products</Text>
+      <View style={styles.descriptionWrapper}>
+        <Text style={styles.description}>You have 3 Products</Text>
+      </View>
     </View>
   );
 };
@@ -14,29 +16,31 @@ const Header = () => {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    marginTop: '60px'
+    marginTop: 60
   },
   profile: {
-    width: '56px',
-    height: '56px'
+    width: 56,
+    height: 56
   },
   name: {
-    fontSize: '18px',
-    lineHeight: '20px',
-    letterSpacing: '0.5px',
+    fontSize: 18,
+    lineHeight: 20,
+    letterSpacing: 0.5,
     color: '#fff',
-    margin: '10px',
+    margin: 10,
     fontFamily: 'Roboto_700Bold'
   },
-  description: {
-    fontSize: '14px',
-    lineHeight: '20px',
-    letterSpacing: '0.39px',
-    color: '#000',
+  descriptionWrapper: {
     backgroundColor: '#fff',
-    borderRadius: '15px',
-    paddingVertical: '3px',
-    paddingHorizontal: '10px',
+    borderRadius: 15
+  },
+  description: {
+    fontSize: 14,
+    lineHeight: 20,
+    letterSpacing: 0.39,
+    color: '#000',
+    paddingVertical: 3,
+    paddingHorizontal: 10,
     fontFamily: 'Roboto_400Regular'
   }
 });
