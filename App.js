@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Card from './components/Card';
 import {
   useFonts,
   Roboto_100Thin,
@@ -45,6 +46,7 @@ export default function App() {
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.image}>
         <Header />
+        <Card />
         <Footer fill="#000" />
       </ImageBackground>
 
