@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 import {
   useFonts,
   Roboto_100Thin,
@@ -44,6 +45,7 @@ export default function App() {
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.image}>
         <Header />
+        <Footer fill="#000" />
       </ImageBackground>
 
       <StatusBar style="auto" />
@@ -60,7 +62,6 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    padding: '20px',
     resizeMode: 'cover',
     alignItems: 'center',
     justifyContent: 'space-between',
