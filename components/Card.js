@@ -1,9 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+  Animated
+} from 'react-native';
 
-const Card = () => {
+const { width } = Dimensions.get('window');
+const CARD_SIZE = width * 0.6;
+
+const Card = ({ translateY, key }) => {
   return (
-    <View style={styles.container}>
+    <Animated.View
+      key={key}
+      style={[
+        styles.container,
+        { width: CARD_SIZE, transform: [{ translateY }] }
+      ]}
+    >
       <Image style={styles.profile} source={require('../assets/profile.png')} />
       <Text style={styles.title}>Sapphire Keychain</Text>
       <Text style={styles.description}>
@@ -12,7 +29,7 @@ const Card = () => {
       <TouchableOpacity style={styles.buttonWrapper}>
         <Text style={styles.buttonText}>View</Text>
       </TouchableOpacity>
-    </View>
+    </Animated.View>
   );
 };
 
@@ -21,7 +38,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
     borderRadius: 20,
-    width: 248
+    margin: 20
   },
   profile: {
     width: 56,
