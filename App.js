@@ -6,13 +6,15 @@ import {
   View,
   ImageBackground,
   Dimensions,
-  Animated
+  Animated,
+  ScrollView
 } from 'react-native';
 import Data from './data';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Card from './components/Card';
+import Indicator from './components/Indicator';
 import {
   useFonts,
   Roboto_100Thin,
@@ -61,36 +63,39 @@ export default function App() {
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.image}>
         <Header />
-        <Animated.FlatList
-          data={cardList}
-          showsHorizontalScrollIndicator
-          keyExtractor={item => item.key}
-          horizontal
-          contentContainerStyle={{ alignItems: 'center' }}
-          snapToInterval={CARD_SIZE}
-          decelerationRate={0}
-          bounces={false}
-          onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-            { useNativeDriver: false }
-          )}
-          scrollEventThrottle={16}
-          renderItem={({ item, index }) => {
-            if (!item.title) {
-              return <View style={{ width: EMPTY_ITEM_SIZE }} />;
-            }
-            const inputRange = [
-              (index - 2) * CARD_SIZE,
-              (index - 1) * CARD_SIZE,
-              index * CARD_SIZE
-            ];
-            const translateY = scrollX.interpolate({
-              inputRange,
-              outputRange: [0, -50, 0]
-            });
-            return <Card key={index} translateY={translateY} />;
-          }}
-        />
+        <View style={styles.carouselWrapper}>
+          <Animated.FlatList
+            data={cardList}
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={item => item.key}
+            horizontal
+            contentContainerStyle={{ alignItems: 'center' }}
+            snapToInterval={CARD_SIZE}
+            decelerationRate={0}
+            bounces={false}
+            onScroll={Animated.event(
+              [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+              { useNativeDriver: false }
+            )}
+            scrollEventThrottle={16}
+            renderItem={({ item, index }) => {
+              if (!item.title) {
+                return <View style={{ width: EMPTY_ITEM_SIZE }} />;
+              }
+              const inputRange = [
+                (index - 2) * CARD_SIZE,
+                (index - 1) * CARD_SIZE,
+                index * CARD_SIZE
+              ];
+              const translateY = scrollX.interpolate({
+                inputRange,
+                outputRange: [0, -50, 0]
+              });
+              return <Card key={index} translateY={translateY} />;
+            }}
+          />
+          <Indicator scrollX={scrollX} cardList={Data} />
+        </View>
         <Footer fill="#000" />
       </ImageBackground>
 
@@ -114,5 +119,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%',
     height: '100%'
+  },
+  carouselWrapper: {
+    position: 'relative',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start'
   }
 });
