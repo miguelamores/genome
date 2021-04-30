@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.39,
     color: '#000',
     paddingVertical: 3,
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
     fontFamily: 'Roboto_400Regular'
   }
 });

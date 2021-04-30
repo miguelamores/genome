@@ -41,19 +41,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
     borderRadius: 20,
-    margin: 20
+    margin: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5
   },
   stone: {
     height: 171,
-    marginTop: '-35%',
-    marginBottom: 10
+    marginTop: '-35%'
   },
   title: {
     fontSize: 25,
     lineHeight: 30,
     letterSpacing: 0.69,
     color: '#4E5B76',
-    margin: 10,
+    marginBottom: 15,
     fontFamily: 'Roboto_700Bold',
     paddingHorizontal: 25,
     textAlign: 'center'
@@ -72,7 +80,7 @@ const styles = StyleSheet.create({
     borderRadius: 19,
     backgroundColor: '#303371',
     paddingVertical: 8,
-    paddingHorizontal: 40,
+    paddingHorizontal: 35,
     marginVertical: 43
   },
   buttonText: {

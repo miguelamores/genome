@@ -96,9 +96,8 @@ export default function App() {
           />
           <Indicator scrollX={scrollX} cardList={Data} />
         </View>
-        <Footer fill="#000" />
       </ImageBackground>
-
+      <Footer fill="#000" />
       <StatusBar style="auto" />
     </View>
   );
@@ -114,7 +113,7 @@ const styles = StyleSheet.create({
   },
   imageBg: {
     flex: 1,
-    resizeMode: 'contain',
+    resizeMode: 'cover',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
