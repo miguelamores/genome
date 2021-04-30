@@ -8,7 +8,7 @@ const Indicator = ({ cardList, scrollX }) => {
   return (
     <View style={styles.indicatorWrapper}>
       {cardList.map((_, i) => {
-        const inputRange = [(i - 1) * width, i * width, (i + 1) * width];
+        const inputRange = [(i - 2) * width, i * width, (i + 2) * width];
         const indicatorColor = scrollX.interpolate({
           inputRange,
           outputRange: ['#A0A9B8', '#424A93', '#A0A9B8']

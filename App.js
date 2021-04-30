@@ -2,12 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useRef } from 'react';
 import {
   StyleSheet,
-  FlatList,
   View,
   ImageBackground,
   Dimensions,
-  Animated,
-  ScrollView
+  Animated
 } from 'react-native';
 import Data from './data';
 
@@ -91,7 +89,7 @@ export default function App() {
                 inputRange,
                 outputRange: [0, -50, 0]
               });
-              return <Card index={index} translateY={translateY} />;
+              return <Card key={item.id} translateY={translateY} {...item} />;
             }}
           />
           <Indicator scrollX={scrollX} cardList={Data} />

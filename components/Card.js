@@ -2,7 +2,6 @@ import React from 'react';
 import {
   StyleSheet,
   Text,
-  View,
   Image,
   TouchableOpacity,
   Dimensions,
@@ -12,10 +11,10 @@ import {
 const { width } = Dimensions.get('window');
 const CARD_SIZE = width * 0.6;
 
-const Card = ({ translateY, index }) => {
+const Card = ({ translateY, id, title, description }) => {
   return (
     <Animated.View
-      key={index}
+      key={id}
       style={[
         styles.container,
         { width: CARD_SIZE, transform: [{ translateY }] }
@@ -25,10 +24,8 @@ const Card = ({ translateY, index }) => {
         style={[styles.stone, { width: CARD_SIZE - 20 }]}
         source={require('../assets/stone_1.png')}
       />
-      <Text style={styles.title}>Sapphire Keychain</Text>
-      <Text style={styles.description}>
-        Choosing the Best Gemstone for Your Necklace and Jewelry
-      </Text>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.description}>{description}</Text>
       <TouchableOpacity style={styles.buttonWrapper}>
         <Text style={styles.buttonText}>View</Text>
       </TouchableOpacity>
