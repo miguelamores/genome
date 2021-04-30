@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     marginTop: 60,
-    marginBottom: 40
+    paddingBottom: 20
   },
   profile: {
     width: 56,

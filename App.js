@@ -67,7 +67,13 @@ export default function App() {
             showsHorizontalScrollIndicator={false}
             keyExtractor={item => item.id}
             horizontal
-            contentContainerStyle={{ alignItems: 'center' }}
+            contentContainerStyle={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              paddingTop: 35,
+              justifyContent: 'center',
+              overflow: 'visible'
+            }}
             snapToInterval={CARD_SIZE}
             decelerationRate={0}
             bounces={false}
@@ -120,10 +126,8 @@ const styles = StyleSheet.create({
     height: '100%'
   },
   carouselWrapper: {
-    position: 'relative',
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    zIndex: 99
+    justifyContent: 'flex-start'
   }
 });

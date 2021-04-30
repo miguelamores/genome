@@ -26,9 +26,7 @@ const Indicator = ({ cardList, scrollX }) => {
 
 const styles = StyleSheet.create({
   indicatorWrapper: {
-    flexDirection: 'row',
-    position: 'absolute',
-    bottom: '12%'
+    flexDirection: 'row'
   },
   indicator: {
     height: 10,
