@@ -36,7 +36,7 @@ const image = require('./assets/background.png');
 
 export default function App() {
   const scrollX = useRef(new Animated.Value(0)).current;
-  const cardList = [{ key: 'left-spacer' }, ...Data, { key: 'right-spacer' }];
+  const cardList = [{ id: 'left-spacer' }, ...Data, { id: 'right-spacer' }];
 
   let [fontsLoaded] = useFonts({
     Roboto_100Thin,
@@ -65,7 +65,7 @@ export default function App() {
           <Animated.FlatList
             data={cardList}
             showsHorizontalScrollIndicator={false}
-            keyExtractor={item => item.key}
+            keyExtractor={item => item.id}
             horizontal
             contentContainerStyle={{ alignItems: 'center' }}
             snapToInterval={CARD_SIZE}
@@ -78,7 +78,9 @@ export default function App() {
             scrollEventThrottle={16}
             renderItem={({ item, index }) => {
               if (!item.title) {
-                return <View style={{ width: EMPTY_ITEM_SIZE }} />;
+                return (
+                  <View key={item.id} style={{ width: EMPTY_ITEM_SIZE }} />
+                );
               }
               const inputRange = [
                 (index - 2) * CARD_SIZE,
@@ -121,6 +123,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    zIndex: 99
   }
 });

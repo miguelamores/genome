@@ -12,15 +12,7 @@ import AddButton from './AddButton';
 const { width } = Dimensions.get('window');
 const CARD_SIZE = width * 0.6;
 
-const Card = ({
-  translateY,
-  id,
-  title,
-  description,
-  isAddCard,
-  image = 'stone_1.png'
-}) => {
-  //const customImage = require(image);
+const Card = ({ translateY, id, title, description, isAddCard, image }) => {
   return (
     <Animated.View
       key={id}
