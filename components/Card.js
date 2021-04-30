@@ -7,11 +7,20 @@ import {
   Dimensions,
   Animated
 } from 'react-native';
+import AddButton from './AddButton';
 
 const { width } = Dimensions.get('window');
 const CARD_SIZE = width * 0.6;
 
-const Card = ({ translateY, id, title, description }) => {
+const Card = ({
+  translateY,
+  id,
+  title,
+  description,
+  isAddCard,
+  image = 'stone_1.png'
+}) => {
+  //const customImage = require(image);
   return (
     <Animated.View
       key={id}
@@ -20,15 +29,21 @@ const Card = ({ translateY, id, title, description }) => {
         { width: CARD_SIZE, transform: [{ translateY }] }
       ]}
     >
-      <Image
-        style={[styles.stone, { width: CARD_SIZE - 20 }]}
-        source={require('../assets/stone_1.png')}
-      />
+      {isAddCard ? (
+        <AddButton />
+      ) : (
+        <Image
+          style={[styles.stone, { width: CARD_SIZE - 20 }]}
+          source={image}
+        />
+      )}
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.description}>{description}</Text>
-      <TouchableOpacity style={styles.buttonWrapper}>
-        <Text style={styles.buttonText}>View</Text>
-      </TouchableOpacity>
+      {!isAddCard && (
+        <TouchableOpacity style={styles.buttonWrapper}>
+          <Text style={styles.buttonText}>View</Text>
+        </TouchableOpacity>
+      )}
     </Animated.View>
   );
 };
@@ -39,6 +54,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 20,
     margin: 20,
+    maxHeight: 369,
+    height: 369,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -46,7 +63,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
     elevation: 5
   },
   stone: {
