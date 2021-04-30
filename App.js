@@ -34,7 +34,7 @@ import {
 const { width } = Dimensions.get('window');
 const CARD_SIZE = width * 0.7;
 const EMPTY_ITEM_SIZE = (width - CARD_SIZE) / 2;
-const image = require('./assets/bg.png');
+const image = require('./assets/background.png');
 
 export default function App() {
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -91,7 +91,7 @@ export default function App() {
                 inputRange,
                 outputRange: [0, -50, 0]
               });
-              return <Card key={index} translateY={translateY} />;
+              return <Card index={index} translateY={translateY} />;
             }}
           />
           <Indicator scrollX={scrollX} cardList={Data} />

@@ -12,16 +12,19 @@ import {
 const { width } = Dimensions.get('window');
 const CARD_SIZE = width * 0.6;
 
-const Card = ({ translateY, key }) => {
+const Card = ({ translateY, index }) => {
   return (
     <Animated.View
-      key={key}
+      key={index}
       style={[
         styles.container,
         { width: CARD_SIZE, transform: [{ translateY }] }
       ]}
     >
-      <Image style={styles.profile} source={require('../assets/profile.png')} />
+      <Image
+        style={[styles.stone, { width: CARD_SIZE - 20 }]}
+        source={require('../assets/stone_1.png')}
+      />
       <Text style={styles.title}>Sapphire Keychain</Text>
       <Text style={styles.description}>
         Choosing the Best Gemstone for Your Necklace and Jewelry
@@ -40,10 +43,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     margin: 20
   },
-  profile: {
-    width: 56,
-    height: 56,
-    marginTop: '-10%',
+  stone: {
+    height: 171,
+    marginTop: '-35%',
     marginBottom: 10
   },
   title: {

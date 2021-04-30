@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   indicatorWrapper: {
     flexDirection: 'row',
     position: 'absolute',
-    bottom: '22%'
+    bottom: '12%'
   },
   indicator: {
     height: 10,

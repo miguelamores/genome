@@ -16,7 +16,8 @@ const Header = () => {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    marginTop: 60
+    marginTop: 60,
+    marginBottom: 40
   },
   profile: {
     width: 56,
