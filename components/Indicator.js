@@ -11,7 +11,7 @@ const Indicator = ({ cardList, scrollX }) => {
         const inputRange = [(i - 1) * width, i * width, (i + 1) * width];
         const indicatorColor = scrollX.interpolate({
           inputRange,
-          outputRange: ['#fff', '#424A93', '#fff']
+          outputRange: ['#A0A9B8', '#424A93', '#A0A9B8']
         });
         return (
           <Animated.View
@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     height: 10,
     width: 10,
     borderRadius: 5,
-    margin: 10
+    margin: 10,
+    backgroundColor: '#A0A9B8'
   }
 });
 

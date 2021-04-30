@@ -61,7 +61,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={image} style={styles.image}>
+      <ImageBackground source={image} style={styles.imageBg}>
         <Header />
         <View style={styles.carouselWrapper}>
           <Animated.FlatList
@@ -112,9 +112,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: '100%'
   },
-  image: {
+  imageBg: {
     flex: 1,
-    resizeMode: 'cover',
+    resizeMode: 'contain',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
